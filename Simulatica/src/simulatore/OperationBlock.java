@@ -17,7 +17,7 @@ public class OperationBlock extends AbstractBlock{
 	
 	
 	public double getValue() {
-		double val= previous.value;
+		double val= previous.getValue();
 		switch (Operation) {
 		case ADD:
 			val+=value;

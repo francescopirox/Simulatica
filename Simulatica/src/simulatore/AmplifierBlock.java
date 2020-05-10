@@ -2,7 +2,7 @@ package simulatore;
 
 public class AmplifierBlock extends AbstractBlock {
 	private float amplification;
-
+	double value;
 	public AmplifierBlock() {
 		
 		super(Block.Type.AMPLIFIER);

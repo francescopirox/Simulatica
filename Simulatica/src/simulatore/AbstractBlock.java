@@ -1,11 +1,14 @@
 package simulatore;
-
+/**
+ * This is the first implementation for the Blocks
+ * @author francescoPirox
+ * @version 0.0.1
+ */
 public abstract class AbstractBlock implements Block {
 	protected AbstractBlock next;
 	protected AbstractBlock previous;
 	protected Type type=Block.Type.UNDEFINED;
-	protected double value;
-	protected double t;
+	
 	
 	public AbstractBlock(AbstractBlock next, AbstractBlock previous,Type type) {
 		this.next = next;
@@ -39,12 +42,7 @@ public abstract class AbstractBlock implements Block {
 	public Block getPreviousBlock() {
 		return previous;
 	}
-
-	@Override
-	public String toString() {
-		return this.getType().toString();
-	}
-	@Override
+	
 	public Type getType() {
 		return type;
 	}
@@ -91,22 +89,39 @@ public abstract class AbstractBlock implements Block {
 			return true;
 		if(!(obj instanceof Block))
 			return false;
-		Block b=(Block)obj;
-		if(b.getNextBlock()==this.next &&
-				b.getPreviousBlock()==this.previous &&
+		AbstractBlock b=(AbstractBlock)obj;
+		if(b.next==this.next &&
+				b.next==this.previous &&
 				b.getType().equals(this.getType()))
 			return true;
 		return false;
 		
 	}
-	
+	/**
+	 * not so usefull hashCode
+	 */
 	@Override
 	public int hashCode() {
 		return this.getType().hashCode();
 	}
 
-	public double getValue() {
-		return value;		
+	public abstract double getValue();
+	/**
+	 * Simple toString
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("AbstractBlock [next=");
+		builder.append(next);
+		builder.append(", previous=");
+		builder.append(previous);
+		builder.append(", type=");
+		builder.append(type);
+		builder.append(", getValue()=");
+		builder.append(getValue());
+		builder.append("]");
+		return builder.toString();
 	}
 
 }

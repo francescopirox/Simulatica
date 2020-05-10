@@ -1,9 +1,17 @@
 package simulatore;
+/**
+ * 
+ * @author francescoPirox
+ * @version 0.0.1
+ *
+ */
 
 public class SourceBlock extends AbstractBlock{
 	long tempoIniziale=System.currentTimeMillis()/1000;
 	double arg;
 	double phase;
+	double value;
+	double t;
 	Function function=Function.NONE;
 	enum Function{SINE, COSINE, STEP, RAMP, NONE};
 	
