@@ -75,12 +75,17 @@ public abstract class AbstractBlock implements Block {
 		ab.previous=this;
 		
 	}
-
+	/**
+	 * Disconnected 
+	 */
 	@Override
 	public void disconnect() {
 		this.next=null;		
 	}
-	
+	/**
+	 * 
+	 * @param obj 
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if(obj==null)
@@ -98,7 +103,7 @@ public abstract class AbstractBlock implements Block {
 		
 	}
 	/**
-	 * not so usefull hashCode
+	 * Not so usefull hashCode
 	 */
 	@Override
 	public int hashCode() {

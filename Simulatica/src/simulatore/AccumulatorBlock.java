@@ -11,5 +11,4 @@ public class AccumulatorBlock extends AbstractBlock {
 		value+= previous.getValue();
 		return value;
 	}
-
 }
